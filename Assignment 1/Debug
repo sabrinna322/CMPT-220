@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Debug {
+    public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("How old are you?");
+            Integer age = sc.nextInt();
+            System.out.println("You are " + age + " years old.");
+            int num1 = 10;
+            int num2 = 37;
+            System.out.println("10 + 37 = " + (10+37));
+            String WIL1 = ("I learned how to build code that accepts input for both strings and integers, which is different from Python.");
+            String WIL2 = ("I also learned how to do math with integers and print them back out.");
+            System.out.print(WIL1 + " " + WIL2);
+        }
+}
