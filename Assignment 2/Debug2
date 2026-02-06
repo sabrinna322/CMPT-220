@@ -1,0 +1,46 @@
+public class Debug {
+    public static void main(String[] args) {
+
+        //First, I fixed the case of 'Var1, Var2, and Var3 to match its corresponding variable.
+        //Then, I placed the variables outside of the string, so the number the variable defines prints instead. 
+        //Here, I added an else if statement for var1 == 4 because if var1 = 4, the original code would print it is less than 4. 
+        int var1 = 4;
+        if (var1 > 4) {
+            System.out.println(var1 + " is greater than 4.");
+        } else if (var1 == 4) {
+            System.out.println(var1 + " is 4.");
+        } else {
+            System.out.println(var1 + " is less than 4.");
+        }
+
+        //Here, the final else would have been unreachable; in other words, if var2 was 6, it would have matched var2 > 5.
+        //So, I added an else if statement for var2 == 6 to check that condition first. 
+        int var2 = 6;
+        if (var2 == 5) {
+            System.out.println(var2 + " is 5.");
+        } else if (var2 == 6) {
+            System.out.println(var2 + " is 6.");
+        } else if (var2 > 5) {
+            System.out.println(var2 + " is greater than 5.");
+        } else {
+            System.out.println(var2 + " is less than 5.");
+        }
+
+        //Here, I added another else if statement for var3 == 10 for the same reason as the first set of code. 
+        int var3 = 5;
+        if (var3 > 10){
+            System.out.println(var3 + " is greater than 10.");
+        } else if (var3 == 10) {
+            System.out.println(var3 + " is 10.");
+        } else {
+            System.out.println(var3 + " is less than 10.");
+        }
+
+        //We do not enter an if statement because == compares string references, not string values, which are case-sensitive.
+        if ("Marist".equalsIgnoreCase("marist")) {
+            System.out.println("Marist College!");
+        } else {
+            System.out.println("Not Marist College :(!");
+        }
+    }
+}
