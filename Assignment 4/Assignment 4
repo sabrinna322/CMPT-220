@@ -1,0 +1,40 @@
+public class Main {
+    public static void main(String[] args) {
+        int[] myArray = {10, 3, 295, 28, 20, 3, 4, 267, 2445, 10, 5566, 87, 93, 17, 10, 2, 87, 267, 3176, 3 ,82};
+        
+        //Loop through each element in the array.
+        for (int currentIndex = 0; currentIndex < myArray.length; currentIndex++) {
+            int currentNumber = myArray[currentIndex];
+            int occurrenceCount = 0;
+            boolean alreadyCounted = false; 
+
+            //Check if number was already counted.
+            for (int previousIndex = 0; previousIndex < currentIndex; previousIndex++) {
+                if (myArray[previousIndex] == currentNumber) {
+                    alreadyCounted = true;
+                    break;
+                }
+            }
+
+            //If it was already counted, skip it.
+            if (alreadyCounted) {
+                continue;
+            }
+
+            //Count how many times the current number appears.
+            for (int comparisonIndex = 0; comparisonIndex < myArray.length; comparisonIndex++) {
+                if (myArray[comparisonIndex] == currentNumber) {
+                    occurrenceCount++;
+                }
+            }
+
+            //If it appears more than once, print it once with its count.
+            if (occurrenceCount > 1) {
+                System.out.println("The element " + currentNumber + " appears " + occurrenceCount + " times.");
+            }
+        }
+
+        //I learned how to manually compare array elements using nested loops instead of relying on utilities.
+        //I also learned how to avoid reporting the same duplicate more than once. 
+    }
+}
