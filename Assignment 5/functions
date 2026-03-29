@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+
+    System.out.println("Enter a password to check its strength:");
+    String password = sc.nextLine();
+
+    String result = checkStrength(password);
+    System.out.println(result);
+
+    sc.close();
+    }
+
+    public static String checkStrength(String password) {
+        boolean hasUpper = false;
+        boolean hasLower = false;
+        boolean hasDigit = false;
+        boolean hasSpecial = false;
+
+        if (password.length() < 12) {
+            return "Week password. Must be at least 12 characters long.";
+        }
+
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            
+            if (Character.isUpperCase(c)) {
+                hasUpper = true;
+            } else if (Character.isLowerCase(c)) {
+                hasLower = true;
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+            } else {
+                hasSpecial = true;
+            }
+        }
+
+        if (hasUpper && hasLower && hasDigit && hasSpecial) {
+            return "Strong Password!";
+        } else {
+            return "Medium Strength. Try adding uppercase, lowercase, numbers, and special characters.";
+        }
+    }
+}
