@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+    try (Scanner sc = new Scanner(System.in)) {
+        //Problem 2
+        System.out.println("Enter a number, and I will give you the factorial:");
+        int numFact = sc.nextInt();
+        System.out.println("The factorial of " + numFact + " is: " + factorial(numFact));
+        
+        //Problem 3
+        System.out.println("Enter a number, and I will give you the sum of every other number:");
+        int sumNum = sc.nextInt();
+        System.out.println("The sum of " + sumNum + " is: " + numSum(sumNum));
+
+        //Problem 4
+        System.out.println("Enter a string, and I will reverse it:");
+        String stringInput = sc.nextLine();
+        System.out.println("Reversed String: " + reverseString(stringInput));
+    }
+    }
+
+    public static long factorial(int numFact) {
+        long factorial = 1;
+        if (numFact < 0) {
+            System.out.println("Factorial does not work with negatives...");
+            return factorial;
+        }
+        for (int i = 1; i <= numFact; i+=2) {
+            factorial *= i;
+        }
+        return factorial;
+    }
+
+    public static int numSum(int sumNum) {
+        int sum = 0;
+        for (int i = 1; i<=sumNum; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+
+    public static String reverseString(String stringInput) {
+        String result = "";
+        for (int i = stringInput.length() - 1; i >= 0; i--) {
+            result += stringInput.charAt(i);
+        }
+        return result;
+    }
+}
