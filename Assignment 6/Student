@@ -1,0 +1,29 @@
+public class Student {
+    String name;
+    String year; 
+    double gpa;
+    int id;
+
+    public Student(String n, String y, double g, int i) {
+        name = n;
+        year = y;
+        gpa = g;
+        id = i;
+    }
+
+    void HonorRoll() {
+        if (gpa > 3.6) {
+            System.out.println(name + ": You're an honor roll student.");
+        } else {
+            System.out.println(name + ": You're not on the honor roll.");
+        }
+    }
+
+    void FreeLunch(int luckyID) {
+        if (id == luckyID) {
+            System.out.println(name + ": You get free lunch today!");
+        } else {
+            System.out.println(name + ": Give me lunch money.");
+        }
+    }
+}
