@@ -1,0 +1,34 @@
+public class workoutTracker {
+    int minutes;
+    double weight;
+    String type; 
+    double calories;
+
+    public workoutTracker(int m, double w, String t) {
+        minutes = m;
+        weight = w;
+        type = t;
+        calories = calcCals();
+    }
+
+    public double calcCals() {
+        if (type.equalsIgnoreCase("cardio")) {
+            calories = minutes * weight * 0.08;
+        } else if (type.equalsIgnoreCase("strength")) {
+            calories = minutes * weight * 0.05;
+        } else {
+            calories = minutes * weight * 0.06;
+        }
+        return calories;
+    }
+
+    public String feedback() {
+        if (calories > 500) {
+            return "Great workout!";
+        } else if (calories > 300) {
+            return "Good job!";
+        } else {
+            return "Keep pushing...";
+        }
+    }
+}
