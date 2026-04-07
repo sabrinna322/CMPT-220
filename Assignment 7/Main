@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        Enemy e1 = new Enemy(10000, 5000);
+
+        System.out.println(e1.health);
+        System.out.println(e1.damage);
+        e1.Attack();
+
+        Wizard fire = new Wizard(8000, 3500, "Fire");
+        Wizard ice = new Wizard(7000, 9000, "Ice");
+
+        System.out.println(fire.health);
+        System.out.println(fire.damage);
+        fire.DamageType();
+
+        System.out.println(ice.health);
+        System.out.println(ice.damage);
+        ice.DamageType();
+
+        Goblin g1 = new Goblin(3000, 1000);
+
+        System.out.println(g1.health);
+        System.out.println(g1.damage);
+        g1.Attack();
+
+    }
+}
