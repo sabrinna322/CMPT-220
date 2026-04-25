@@ -1,0 +1,59 @@
+import java.util.Stack;
+import java.util.LinkedList;
+public class Main {
+    public static void main(String[] args) {
+        Stack<Integer> stax = new Stack<>();
+
+        stax.push(70);
+        stax.push(34);
+        stax.push(807);
+        stax.push(61);
+        stax.push(28);
+        stax.push(563);
+        stax.push(492);
+
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+
+        for (int num : stax) {
+            if (num > max) {
+                max = num;
+            }
+            if (num < min) {
+                min = num;
+            }
+        }
+
+        System.out.println("Stack max value: " + max);
+        System.out.println("Stack min value: " + min);
+
+        System.out.println("Number of elements in stack: " + stax.size());
+
+        LinkedList<Integer> linky = new LinkedList<>();
+
+        linky.add(10);
+        linky.add(20);
+        linky.add(30);
+        linky.add(40);
+        linky.add(50);
+
+        int middleIndex = linky.size() / 2;
+        int middleValue = linky.get(middleIndex);
+
+        System.out.println("Middle value of linked list: " + middleValue);
+
+        Stack<String> history = new Stack<>();
+
+        history.push("google.com");
+        history.push("youtube.com");
+        history.push("github.com");
+
+        System.out.println("Current Page: " + history.peek());
+
+        history.pop();
+        System.out.println("After going back: " + history.peek());
+
+        history.push("reddit.com");
+        System.out.println("New current page: " + history.peek());
+    }
+}
